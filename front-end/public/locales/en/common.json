@@ -1,0 +1,26 @@
+{
+  "app.title": "General Practice Clinic",
+  "general.error": "An error has occurred. Please try again later.",
+  "header": {
+    "welcome": "Welcome",
+    "nav": {
+      "home": "Home"
+    }
+  },
+  "authentication": {
+    "login": {
+      "header": "Login",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submitButton": "Submit",
+      "signupLinkText": "Don't have an account? Sign up"
+    },
+    "signup": {
+      "header": "Sign Up",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submitButton": "Submit",
+      "loginLinkText": "Already have an account? Login"
+    }
+  }
+}

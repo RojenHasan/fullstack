@@ -1,0 +1,243 @@
+/* Import base styles, components, and utilities from Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EEEEEE;
+  }
+}
+
+@layer components {
+  /* Table Styles */
+  table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-bottom: 10rem;
+    
+  }
+
+  th, td {
+    border: 1px solid #E8EAED;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  th {
+    background-color: #6F737AFF;
+    color: #fff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #F4F1EA;
+  }
+
+  tr:hover {
+    background-color: #DBDADF;
+    color: #4D3F22;
+  }
+
+  /* Form Styles */
+  form {
+    max-width: 400px;
+    
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #E8EAED;
+    border-radius: 0.25rem;
+  }
+
+  button {
+    background-color: #F6C9AA;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border: 2px solid #000; /* Add a 2px solid black border */
+    border-radius: 0.25rem;
+    cursor: pointer;
+    
+  }
+
+  button:hover {
+    background-color: #F7E1CAFF;
+  }
+}
+main h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #6f737aff; /* Updated text color */
+  font-weight: bold; /* Make text bold */
+}
+
+main {
+  flex-grow: 1;
+  width: 100%; /* Ensure main content takes the full width */
+  padding: 20px; /* Add padding or adjust as needed */
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* Remove default margin */
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #617E97FF; /* Set your preferred background color for the footer */
+  color: #fff; /* Set your preferred text color for the footer */
+  padding: 15px;
+  text-align: center;
+}
+
+header {
+  background-color: #617E97FF; /* Set your preferred background color for the header */
+  color: #fff; /* Set your preferred text color for the header */
+  padding: 15px;
+  text-align: center;
+  
+}
+
+header h1 {
+  margin: 0;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 24px;
+}
+.text-danger {
+  color: #ff0000; /* Set the text color to red */
+  border: 1px solid #ff0000; /* Add a red border */
+  padding: 0.5rem; /* Add padding for better visibility */
+  border-radius: 0.25rem; /* Add border radius for a rounded look */
+  margin-top: 0.5rem; /* Add margin to separate error messages */
+}
+.bottom {
+  margin-bottom: 3rem;
+}
+
+@layer utilities {
+  /* Add any utility classes here */
+}
+
+/*:root {
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --primary-glow: conic-gradient(
+    from 180deg at 50% 50%,
+    #16abff33 0deg,
+    #0885ff33 55deg,
+    #54d6ff33 120deg,
+    #0071ff33 160deg,
+    transparent 360deg
+  );
+  --secondary-glow: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+
+  --tile-start-rgb: 239, 245, 249;
+  --tile-end-rgb: 228, 232, 233;
+  --tile-border: conic-gradient(
+    #00000080,
+    #00000040,
+    #00000030,
+    #00000020,
+    #00000010,
+    #00000010,
+    #00000080
+  );
+
+  --callout-rgb: 238, 240, 241;
+  --callout-border-rgb: 172, 175, 176;
+  --card-rgb: 180, 185, 188;
+  --card-border-rgb: 131, 134, 135;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+
+    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
+    --secondary-glow: linear-gradient(
+      to bottom right,
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0),
+      rgba(1, 65, 255, 0.3)
+    );
+
+    --tile-start-rgb: 2, 13, 46;
+    --tile-end-rgb: 2, 5, 19;
+    --tile-border: conic-gradient(
+      #ffffff80,
+      #ffffff40,
+      #ffffff30,
+      #ffffff20,
+      #ffffff10,
+      #ffffff10,
+      #ffffff80
+    );
+
+    --callout-rgb: 20, 20, 20;
+    --callout-border-rgb: 108, 108, 108;
+    --card-rgb: 100, 100, 100;
+    --card-border-rgb: 200, 200, 200;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+*/

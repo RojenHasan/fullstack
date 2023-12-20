@@ -1,0 +1,27 @@
+
+{
+  "app.title": "Algemene huisartspraktijk",
+  "general.error": "Er is een fout opgetreden. Probeer het later opnieuw.",
+  "header": {
+    "welcome": "Welkom",
+    "nav": {
+      "home": "Home"
+    }
+  },
+  "authentication": {
+    "login": {
+      "header": "Inloggen",
+      "emailLabel": "E-mail",
+      "passwordLabel": "Wachtwoord",
+      "submitButton": "Verzenden",
+      "signupLinkText": "Heb je nog geen account? Registreer"
+    },
+    "signup": {
+      "header": "Registreren",
+      "emailLabel": "E-mail",
+      "passwordLabel": "Wachtwoord",
+      "submitButton": "Verzenden",
+      "loginLinkText": "Heb je al een account? Log in"
+    }
+  }
+}

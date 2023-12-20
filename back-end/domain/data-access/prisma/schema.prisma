@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Doctor {
+  id            Int             @id @default(autoincrement())
+  name          String
+  experience    String
+  availability  String
+  appointment   Appointment[]
+  medicalRecord MedicalRecord[]
+  medicalTest   MedicalTest[]
+  user          User            @relation(fields: [userId], references: [id])
+  userId        Int             @unique
+}
+model Patient {
+  id              Int             @id @default(autoincrement())
+  name            String
+  medical_History String
+  street          String
+  postcode        Int
+  housenr         Int
+  stad            String
+  appointment     Appointment[]
+  medicalRecord   MedicalRecord[]
+  medicalTest     MedicalTest[]
+  user          User            @relation(fields: [userId], references: [id])
+  userId        Int             @unique
+
+  @@unique([street, stad, postcode, housenr])
+}
+model User {
+  id        Int      @id @default(autoincrement())
+  password  String
+  email     String   @unique
+  role      String
+  docter    Doctor?
+  patient   Patient?
+}
+
+
+model MedicalRecord {
+  id          Int           @id @default(autoincrement())
+  diagnosis   String
+  treatment   String
+  date        DateTime      @default(now())
+  patient     Patient       @relation(fields: [patientId], references: [id],  onDelete: Cascade)
+  patientId   Int
+  doctor      Doctor        @relation(fields: [doctorId], references: [id], onDelete: Cascade)
+  doctorId    Int
+  Appointment Appointment[]
+}
+
+model MedicalTest {
+  id          Int           @id @default(autoincrement())
+  name        String
+  cost        Float
+  description String
+  appointment Appointment[]
+  patient     Patient       @relation(fields: [patientId], references: [id])
+  patientId   Int
+  doctor      Doctor        @relation(fields: [doctorId], references: [id])
+  doctorId    Int
+}
+
+
+model Appointment {
+  id              Int           @id @default(autoincrement())
+  date            DateTime
+  time            DateTime
+  doctor          Doctor        @relation(fields: [doctorId], references: [id])
+  doctorId        Int
+  patient         Patient       @relation(fields: [patientId], references: [id])
+  patientId       Int
+  medicalRecordId Int?
+  medicalRecord   MedicalRecord? @relation(fields: [medicalRecordId], references: [id])
+  medicalTest     MedicalTest[]
+}
+
